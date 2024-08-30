@@ -3,37 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زر انتقل إلى جوجل</title>
+    <title>فتح مواقع متعددة</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
+            font-family: Arial, sans-serif;
             text-align: center;
-            color: #fff;
-            background-color: #007bff;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 5px;
+            cursor: pointer;
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
             border: none;
             border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
         }
-
         .button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <a href="https://t.ajrkm3.com/338790/8865/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN" class="button" target="_blank">انتقل إلى جوجل</a>
+    <h1>افتح 25 نافذة لجوجل</h1>
+    <div id="buttons-container">
+        <!-- أزرار سيتم إضافتها عبر JavaScript -->
+    </div>
+
+    <script>
+        const numButtons = 20; // عدد الأزرار
+        const numSitesPerButton = 25; // عدد النوافذ لكل زر
+        const url = 'https://t.ajrkm3.com/338790/8865/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN';
+
+        function openSites() {
+            for (let i = 0; i < numSitesPerButton; i++) {
+                window.open(url, '_blank');
+            }
+        }
+
+        // إنشاء الأزرار وإضافتها إلى الصفحة
+        const buttonsContainer = document.getElementById('buttons-container');
+        for (let i = 0; i < numButtons; i++) {
+            const button = document.createElement('button');
+            button.className = 'button';
+            button.textContent = `افتح 25 نافذة لجوجل ${i + 1}`;
+            button.onclick = openSites;
+            buttonsContainer.appendChild(button);
+        }
+    </script>
 </body>
 </html>
